@@ -13,6 +13,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <nav class="navbar navbar-inverse navbar-fixed"></nav>
+    
         <title>Cadastrar Pessoa Fisica</title>
 
         <!-- Bootstrap URL - CSS -->

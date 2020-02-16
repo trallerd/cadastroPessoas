@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <nav class="navbar navbar-inverse navbar-fixed"></nav>
         
         <!-- Bootstrap URL - CSS -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
