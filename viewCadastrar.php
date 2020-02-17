@@ -29,7 +29,7 @@
     <body role="document">
     <div class="container theme-showcase" role="main">
     <h1> Cadastradar Nova Pessoa Física</h1>
-        <form class="form" method="post" action="viewCadastrar.php">
+    <form class="form" method="post" action="viewCadastrar.php">
         <input TYPE="hidden" NAME="form_submit" VALUE="OK">
             <br><br>
             <button type="submit" class="btn btn-primary btn-block" value="cadastrar/">
@@ -57,7 +57,8 @@
                     <input type="text" class="form-control" name="endereco" maxlength="18" placeholder="Endereco" required autofocus>
                 </div>
             </div>
-        </form>
+       
         </div>
+        </form>
     </body>
 </html>

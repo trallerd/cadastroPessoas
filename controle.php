@@ -59,7 +59,7 @@
 		}
 		
 		foreach ($pessoas as $cpf => $dados) {
-
+			
 			if(!empty($dados)) {
 				echo "<tr>";
 					echo "<td>".$cpf."</td>";
@@ -69,16 +69,17 @@
 					}
 
 					echo "<td>";
-						echo "<button type='submit' name='acao' value='alterar/'".$cpf.">";
+						echo "<button type='submit' name='acao' value='alterar/.$cpf.'>";
 							echo "<span class='glyphicon glyphicon-pencil'></span>";
 						echo "</button>";
 						echo "&nbsp";
-						echo "<button type='submit' name='acao' value='remover/'".$cpf.">";
+						echo "<button type='submit' name='acao' value='remover/$cpf'>";
 							echo "<span class='glyphicon glyphicon-remove'></span>";
 						echo "</button>";
 					echo "</td>";
 				echo "</tr>";
 			}
+		
 		}
 	}
 	

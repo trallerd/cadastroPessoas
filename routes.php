@@ -6,10 +6,10 @@
          $dados = explode("/", $url);
          if(strcmp($dados[0], "cadastar") == 0) {
              
-             console.log("ok");
-             if(( $dados['cpf'] && $dados['nome'] &&  $dados['telefone'] && $dados['endereco'] ) ){
-                 cadastraPessoa($url);
-             } 
+             
+            // if(( $dados['cpf'] && $dados['nome'] &&  $dados['telefone'] && $dados['endereco'] ) ){
+              //   cadastraPessoa($url);
+             //} 
              echo "<script>href='viewCadastrar.php'</script>";				
              
                                      

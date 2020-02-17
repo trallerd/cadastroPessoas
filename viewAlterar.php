@@ -25,6 +25,8 @@
     </head>
 
     <body role="document">
+    <form class="form" method="post" action="viewCadastrar.php">
+        <input TYPE="hidden" NAME="form_submit" VALUE="OK">
     <div class="container theme-showcase" role="main">
     <h1> Cadastradar Pessoa Física</h1>
         <form class="form" method="post" action="viewCadastrar.php">
@@ -59,5 +61,6 @@
             </div>
         </form>
         </div>
+        </form>
     </body>
 </html>
