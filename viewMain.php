@@ -3,7 +3,8 @@
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
 
-    include_once ("modelo.php");
+    include_once ("controle.php");
+    include_once ("routes.php");
     
     if( !empty($_POST['form_submit']) ) {
         rotas($_POST['acao']);
@@ -30,9 +31,9 @@
         <h1> Pessoas Físicas Cadastradas</h1>
             <table class='table table-striped'>
             <br>
-            <button type="submit" name="acao" value="cadastrar/0" class="btn btn-primary btn-block">
-            <b>Cadastrar Nova Pessoa Fisica</b>
-            </button>
+            <button type="submit" class="btn btn-primary btn-block" name="acao" value="cadastar/">
+                    <b>Cadastrar Nova Pessoa Física</b>
+                </button>
             <br>
     		    <thead>
     		        <tr>

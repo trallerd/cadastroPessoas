@@ -3,10 +3,11 @@
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
 
-    include_once ("modelo.php");
+    include_once ("controle.php");
+    include_once ("routes.php");
 
     if( !empty($_POST['form_submit']) ) {
-        escreverArquivoArray($arr);
+        rotas($_POST['acao']);
     }
 ?>
 
@@ -31,7 +32,7 @@
         <form class="form" method="post" action="viewCadastrar.php">
         <input TYPE="hidden" NAME="form_submit" VALUE="OK">
             <br><br>
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-block" value="cadastrar/">
                 <b>Cadastrar</b>
                 
             </button>
