@@ -9,6 +9,9 @@
     if( !empty($_POST['form_submit']) ) {
         rotas($_POST['acao']);
     }
+    if(!empty($_POST['form_submit']) && !empty($_POST['cpf']) && !empty($_POST['nome']) && !empty($_POST['telefone']) && !empty($_POST['endereco']) ){
+        cadastrarPessoa($_POST);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +34,14 @@
     <h1> Cadastradar Nova Pessoa Física</h1>
     <form class="form" method="post" action="viewCadastrar.php">
         <input TYPE="hidden" NAME="form_submit" VALUE="OK">
-            <br><br>
-            <button type="submit" class="btn btn-primary btn-block" value="cadastrar/">
-                <b>Cadastrar</b>
-                
-            </button>
             <br>
+            <button type="submit" name="acao"class="btn btn-primary col-sm-6" value="cadastrar/">
+                <b>Cadastrar</b>
+            </button>
+            <button  type="button" name="acao" onClick="JavaScript: location.href='viewMain.php';" class="btn btn-warning col-sm-6">
+                        <b>Voltar - Não Alterar</b>
+                        </button>
+            <br><br>
             <div class='row'>
             <br>
         		<div class='col-sm-3'>

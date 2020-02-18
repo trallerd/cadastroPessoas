@@ -1,43 +1,47 @@
 <?php
-	include_once("modelo.php");
+	include_once ("modelo.php");
 
-	function buscaPessoa() {
+	function cadastrarPessoa($arr) {
+		$pessoa=pessoaArray($arr);
+		cadastraPessoa($pessoa);
 
-		$pessoas = array();
-		$fp = fopen('pessoas.txt', 'r');
-
-		if ($fp) {
-
-			while(!feof($fp)) {
-				$arr = array();
-				$cpf = fgets($fp);
-				$dados = fgets($fp);
-				if(!empty($dados)) {
-					$arr = explode("#", $dados);
-					$pessoas[$cpf] = $arr;
-				}
-			}
-
-			fclose($fp);
-		}
+	}
+	function alterarCadastro($arr){
+		$pessoa = pessoaArray($arr);
+		alteraPessoa($pessoa);
+		
+	}
+	function deletaPessoa($arr){
+		$pessoa = pessoaArray($arr);
+		deletPessoa($pessoa);
 	}
 
-	function cadastraPessoa($arr) {
+	function pessoaArray($post) {
 
-		$fp = fopen('pessoas.txt', 'a+');
+		$array=array(
+			$post['cpf']=>array(
+				'nome'=> $post['nome'],
+				'telefone'=> $post['telefone'],
+				'endereco'=> $post['endereco'],
+			)
+	);
 
-		if ($fp) {
-			foreach($arr as $cpf => $dados) {
-				if(!empty($dados)) {
-					$linha = $cpf." - ".$dados['nome']." - ".$dados['endereco']." - ".$dados['telefone'];
-					fputs($fp, "$linha\n");
-				}
-			}
-			fclose($fp);
-		}
-
-		echo "[OK] Dados escritos com Sucesso!";
+	return $array;
 	}
+
+	function obterDadosMontarArray($post) {
+
+		// Monta o array
+		$dados = array(
+			$post['cpf'] => array(
+				"nome" => $post['nome'],
+				"telefone" => $post['telefone']
+			)
+		);
+
+		print_r($dados);
+	}
+
 	function loadTabela() {
 
         $pessoas = array();
@@ -69,11 +73,11 @@
 					}
 
 					echo "<td>";
-						echo "<button type='submit' name='acao' value='alterar/.$cpf.'>";
+						echo "<button  type='submit' name='acao' onClick='JavaScript: location.href='viewAlterar.php';' class='btn btn-warning col-sm-3'>";
 							echo "<span class='glyphicon glyphicon-pencil'></span>";
 						echo "</button>";
-						echo "&nbsp";
-						echo "<button type='submit' name='acao' value='remover/$cpf'>";
+						echo "&nbsp";echo "&nbsp";echo "&nbsp";
+						echo "<button type='submit' name='acao' value='remover/$cpf'class='btn btn-danger col-sm-3'>";
 							echo "<span class='glyphicon glyphicon-remove'></span>";
 						echo "</button>";
 					echo "</td>";

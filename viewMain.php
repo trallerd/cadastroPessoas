@@ -11,7 +11,7 @@
     }
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
     <head>
     <nav class="navbar navbar-inverse navbar-fixed"></nav>
@@ -26,30 +26,30 @@
     </head>
 
     <body role="document">
-    <form class="form" method="post" action="viewCadastrar.php">
+        <form class="form" method="post" action="viewMain.php">
         <input TYPE="hidden" NAME="form_submit" VALUE="OK">
-        <div class="container theme-showcase" role="main">
-        <h1> Pessoas Físicas Cadastradas</h1>
-            <table class='table table-striped'>
-            <br>
-            <button type="submit" class="btn btn-primary btn-block" name="acao" value="cadastar/">
-                    <b>Cadastrar Nova Pessoa Física</b>
-                </button>
-            <br>
-    		    <thead>
-    		        <tr>
-    		            <th>CPF</th>
-    		            <th>NOME</th>
-    		            <th>ENDEREÇO</th>
-    		            <th>TELEFONE</th>
-    		            <th>AÇÕES</th>
-    		        </tr>
-    		    </thead>
-    		    <tbody>
-                    <?php loadTabela(); ?>
-                </tbody>
-            </table>
-        </div>
+            <div class="container theme-showcase" role="main">
+                <h1> Pessoas Físicas Cadastradas</h1>
+                <table class='table table-striped'>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-block" name="acao" value="cadastar/">
+                            <b>Cadastrar Nova Pessoa Física</b>
+                        </button>
+                    <br>
+                        <thead>
+                            <tr>
+                                <th>CPF</th>
+                                <th>NOME</th>
+                                <th>ENDEREÇO</th>
+                                <th>TELEFONE</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php loadTabela(); ?>
+                        </tbody>
+                </table>
+            </div>
         </form>
     </body>
 </html>

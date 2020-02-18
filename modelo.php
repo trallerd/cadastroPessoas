@@ -1,35 +1,68 @@
 <?php
-	include_once ("controle.php");
 
-	function cadastrarPessoa($arr) {
-
-		$pessoa=pessoaArray($arr);
-
-
-		cadastraPessoa($pessoa);
-
+	function deletPessoa($cpf){
+		echo "<script> alert('entrando no deletar') </script>";
 	}
 
-	function pessoaArray($post) {
+	function alteraPessoa($arrayPessoa){
+		echo "<script> alert('alterando vc..') </script>";
+		/*		$arr = fopen('pessoas.txt','r+');
+			if ($arr) { 
+				while(true) { 
+				$linha = fgets($arr); 
+				if ($linha==null){ break;} 
+				if(preg_match(".$arrayPessoa.", $linha)) { 
+					foreach($arrayPessoa as $cpf => $dados) {
+						if(empty($dados)) {
+							$linha = $cpf."\n".$dados['nome']."#".$dados['endereco']."#".$dados['telefone']."\n";
+							fputs($arr, $linha);
+						}
+					}
+				} 
+			} 
+			
+			 echo 'Arquivo atualizado com sucesso'; 
+			 fclose($arr);  
+	
+		}*/
+	}
+	
+	
+	function cadastraPessoa($arrayPessoa) {
 
-		$dados = $post['cpf']." - ".$post['nome']." - ".$post['telefone']." - ".$post['endereco'];
-		echo "<script> alert('".$dados."') </script>";
-
-		return $dados;
+		$fp = fopen('pessoas.txt', 'a+');
+		if ($fp) {
+			foreach($arrayPessoa as $cpf => $dados) {
+				if(!empty($dados)) {
+					$linha = $cpf."\n".$dados['nome']."#".$dados['endereco']."#".$dados['telefone']."\n";
+					fputs($fp, $linha);
+				}
+			}
+			fclose($fp);
+		}
+		echo "[OK] Dados escritos com Sucesso!";
 	}
 
-	function obterDadosMontarArray($post) {
 
-		// Monta o array
-		$dados = array(
-			$post['cpf'] => array(
-				"nome" => $post['nome'],
-				"endereco" => $post['Endereço'],
-				"telefone" => $post['telefone']
-			)
-		);
+	function buscaPessoa() {
 
-		print_r($dados);
+		$pessoas = array();
+		$fp = fopen('pessoas.txt', 'r');
+
+		if ($fp) {
+
+			while(!feof($fp)) {
+				$arr = array();
+				$cpf = fgets($fp);
+				$dados = fgets($fp);
+				if(!empty($dados)) {
+					$arr = explode("#", $dados);
+					$pessoas[$cpf] = $arr;
+				}
+			}
+
+			fclose($fp);
+		}
 	}
 	
 ?>
