@@ -73,7 +73,7 @@
 					}
 
 					echo "<td>";
-						echo "<button  type='submit' name='acao' onClick='JavaScript: location.href='viewAlterar.php';' class='btn btn-warning col-sm-3'>";
+						echo "<button  type='submit' name='acao' value='alterar/$cpf' class='btn btn-warning col-sm-3'>";
 							echo "<span class='glyphicon glyphicon-pencil'></span>";
 						echo "</button>";
 						echo "&nbsp";echo "&nbsp";echo "&nbsp";

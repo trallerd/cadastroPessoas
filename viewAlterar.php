@@ -37,7 +37,7 @@
                 
                     <br><br>
                         
-                        <button  type="submit" name="acao" value="alterar/$cpf"class="btn btn-success  col-sm-6">
+                        <button  type="submit" name="acao" value="alterar/"class="btn btn-success  col-sm-6">
                             <b> Confirmar Alteração</b>                
                         </button>
                         <button  type="button" onClick="JavaScript: location.href='viewMain.php';" class="btn btn-warning col-sm-6">

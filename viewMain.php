@@ -26,7 +26,7 @@
     </head>
 
     <body role="document">
-        <form class="form" method="post" action="viewMain.php">
+    <form class="form" method="post" action="viewMain.php">
         <input TYPE="hidden" NAME="form_submit" VALUE="OK">
             <div class="container theme-showcase" role="main">
                 <h1> Pessoas Físicas Cadastradas</h1>
